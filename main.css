@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.table {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.table span {
+  text-align: center;
+}
+
+.row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 33% 33%;
+      grid-template-columns: auto 33% 33%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.row input {
+  height: 25px;
+  width: 110px;
+  font-size: 1.5em;
+}
+
+.result-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.result-row p {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  text-align: right;
+}
+
+.result-row span {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+/*# sourceMappingURL=main.css.map */

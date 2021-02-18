@@ -49,13 +49,11 @@ function time(result) {
 function distance(result){
     if (result.includes(".")) {
         a = result.split(".")
-        b = parseFloat(parseInt(a[0]) * 100 + parseInt(a[1]))
+        return parseFloat(parseInt(a[0]) * 100 + parseInt(a[1]))
     }
     else {
-        b = parseFloat(parseInt(result) * 100)
+        return parseFloat(parseInt(result) * 100)
     }
-
-    return b
 }
 
 
@@ -110,7 +108,6 @@ function highjump(result) {
         highscore = parseInt((a * (result - b)**c))
     }
 }
-
 
 function fourhun(result) {
     const a = 1.53775
@@ -173,90 +170,230 @@ function fifteenhun(result) {
 
 
 hundred_in.addEventListener("input", function() {
-    if (hundred_in.value.length > 0) {
-        hundred(time(hundred_in.value))
-        hundred_out.innerHTML = hunscore.toString()
+    if (hundred_in.value === "") {
+        hunscore = 0
+        total = longscore + shotscore + highscore + fourscore + 
+            hurdlescore + discusscore + polescore + javelinscore + fifteenscore
+
+        hundred_out.innerHTML = hunscore
+        total_out.innerHTML = total
     }
-    else {hundred_out.innerHTML = 0}
+    else {
+        hundred(time(hundred_in.value))
+
+        if(!isNaN(hunscore)) {
+            total = hunscore + longscore + shotscore + highscore + fourscore + 
+                hurdlescore + discusscore + polescore + javelinscore + fifteenscore
+
+            hundred_out.innerHTML = hunscore
+            total_out.innerHTML = total
+        }
+    }
 })
 
 
 longjump_in.addEventListener("input", function() {
-    if (longjump_in.value.length > 0) {
-        longjump(distance(longjump_in.value))
-        longjump_out.innerHTML = longscore.toString()
+    if (longjump_in.value === "") {
+        longscore = 0
+        total = hunscore + shotscore + highscore + fourscore + 
+            hurdlescore + discusscore + polescore + javelinscore + fifteenscore
+
+        longjump_out.innerHTML = longscore
+        total_out.innerHTML = total
     }
-    else {longjump_out.innerHTML = 0}
+    else {
+        longjump(distance(longjump_in.value))
+
+        if (!isNaN(longscore)) {
+            total = longscore + hunscore + shotscore + highscore + fourscore + 
+                hurdlescore + discusscore + polescore + javelinscore + fifteenscore
+
+            longjump_out.innerHTML = longscore
+            total_out.innerHTML = total
+        }
+    }
 })
 
 
 shotput_in.addEventListener("input", function() {
-    if (shotput_in.value.length > 0) {
-        shotput(parseFloat(shotput_in.value))
-        shotput_out.innerHTML = shotscore.toString()
+    if (shotput_in.value === "") {
+        shotscore = 0
+        total = hunscore + longscore + highscore + fourscore + 
+            hurdlescore + discusscore + polescore + javelinscore + fifteenscore
+
+        shotput_out.innerHTML = shotscore
+        total_out.innerHTML = total
     }
-    else {shotput_out.innerHTML = 0}
+    else {
+        shotput(parseFloat(shotput_in.value))
+
+        if (!isNaN(shotscore)) {
+            total = shotscore + hunscore + longscore + highscore + fourscore + 
+                hurdlescore + discusscore + polescore + javelinscore + fifteenscore
+
+            shotput_out.innerHTML = shotscore
+            total_out.innerHTML = total
+        }
+    }
 })
 
 
 highjump_in.addEventListener("input", function() {
-    if (highjump_in.value.length > 0) {
-        highjump(distance(highjump_in.value))
-        highjump_out.innerHTML = highscore.toString()
+    if (highjump_in.value === "") {
+        highscore = 0
+        total = hunscore + shotscore + longscore + fourscore + 
+            hurdlescore + discusscore + polescore + javelinscore + fifteenscore
+
+        highjump_out.innerHTML = highscore
+        total_out.innerHTML = total
     }
-    else {highjump_out.innerHTML = 0}
+    else {
+        highjump(distance(highjump_in.value))
+
+        if (!isNaN(highscore)) {
+            total = highscore + hunscore + shotscore + longscore + fourscore + 
+                hurdlescore + discusscore + polescore + javelinscore + fifteenscore
+
+            highjump_out.innerHTML = highscore
+            total_out.innerHTML = total
+        }
+    }
 })
 
 
 fourhun_in.addEventListener("input", function() {
-    if (fourhun_in.value.length > 0) {
-        fourhun(time(fourhun_in.value))
-        fourhun_out.innerHTML = fourscore.toString()
+    if (fourhun_in.value === "") {
+        fourscore = 0
+        total = longscore + shotscore + highscore + hunscore + 
+            hurdlescore + discusscore + polescore + javelinscore + fifteenscore
+
+        fourhun_out.innerHTML = fourscore
+        total_out.innerHTML = total
     }
-    else {fourhun_out.innerHTML = 0}
+    else {
+        fourhun(time(fourhun_in.value))
+
+        if(!isNaN(fourscore)) {
+            total = fourscore + longscore + shotscore + highscore + hunscore + 
+                hurdlescore + discusscore + polescore + javelinscore + fifteenscore
+
+            fourhun_out.innerHTML = fourscore
+            total_out.innerHTML = total
+        }
+    }
 })
 
 
 hurdles_in.addEventListener("input", function() {
-    if (hurdles_in.value.length > 0) {
-        hurdles(time(hurdles_in.value))
-        hurdles_out.innerHTML = hurdlescore.toString()
+    if (hurdles_in.value === "") {
+        hurdlescore = 0
+        total = longscore + shotscore + highscore + hunscore + 
+            fourscore + discusscore + polescore + javelinscore + fifteenscore
+
+        hurdles_out.innerHTML = hurdlescore
+        total_out.innerHTML = total
     }
-    else {hurdles_out.innerHTML = 0}
+    else {
+        hurdles(time(hurdles_in.value))
+
+        if(!isNaN(hurdlescore)) {
+            total = hurdlescore + longscore + shotscore + highscore + hunscore + 
+                fourscore + discusscore + polescore + javelinscore + fifteenscore
+
+            hurdles_out.innerHTML = hurdlescore
+            total_out.innerHTML = total
+        }
+    }
 })
 
 
 discus_in.addEventListener("input", function() {
-    if (discus_in.value.length > 0) {
-        discus(parseFloat(discus_in.value))
-        discus_out.innerHTML = discusscore.toString()
+    if (discus_in.value === "") {
+        discusscore = 0
+        total = hunscore + longscore + highscore + fourscore + 
+            hurdlescore + shotscore + polescore + javelinscore + fifteenscore
+
+        discus_out.innerHTML = discusscore
+        total_out.innerHTML = total
     }
-    else {discus_out.innerHTML = 0}
+    else {
+        discus(parseFloat(discus_in.value))
+
+        if (!isNaN(discusscore)) {
+            total = discusscore + hunscore + longscore + highscore + fourscore + 
+                hurdlescore + shotscore + polescore + javelinscore + fifteenscore
+
+            discus_out.innerHTML = discusscore
+            total_out.innerHTML = total
+        }
+    }
 })
 
 
 pole_in.addEventListener("input", function() {
-    if (pole_in.value.length > 0) {
-        pole(distance(pole_in.value))
-        pole_out.innerHTML = polescore.toString()
+    if (pole_in.value === "") {
+        polescore = 0
+        total = hunscore + shotscore + longscore + fourscore + 
+            hurdlescore + discusscore + highscore + javelinscore + fifteenscore
+
+        pole_out.innerHTML = polescore
+        total_out.innerHTML = total
     }
-    else {pole_out.innerHTML = 0}
+    else {
+        pole(distance(pole_in.value))
+
+        if (!isNaN(polescore)) {
+            total = polescore + hunscore + shotscore + longscore + fourscore + 
+                hurdlescore + discusscore + highscore + javelinscore + fifteenscore
+
+            pole_out.innerHTML = polescore
+            total_out.innerHTML = total
+        }
+    }
 })
 
 
 javelin_in.addEventListener("input", function() {
-    if (javelin_in.value.length > 0) {
-        javelin(parseFloat(javelin_in.value))
-        javelin_out.innerHTML = javelinscore.toString()
+    if (javelin_in.value === "") {
+        javelinscore = 0
+        total = hunscore + longscore + highscore + fourscore + 
+            hurdlescore + shotscore + polescore + discusscore + fifteenscore
+
+        javelin_out.innerHTML = javelinscore
+        total_out.innerHTML = total
     }
-    else {javelin_out.innerHTML = 0}
+    else {
+        javelin(parseFloat(javelin_in.value))
+
+        if (!isNaN(javelinscore)) {
+            total = javelinscore + hunscore + longscore + highscore + fourscore + 
+                hurdlescore + shotscore + polescore + discusscore + fifteenscore
+
+            javelin_out.innerHTML = javelinscore
+            total_out.innerHTML = total
+        }
+    }
 })
 
 
 fifteenhun_in.addEventListener("input", function() {
-    if (fifteenhun_in.value.length > 0) {
-        fifteenhun(time(fifteenhun_in.value))
-        fifteenhun_out.innerHTML = fifteenscore.toString()
+    if (fifteenhun_in.value === "") {
+        fifteenscore = 0
+        total = longscore + shotscore + highscore + hunscore + 
+            fourscore + discusscore + polescore + javelinscore + hurdlescore
+
+        fifteenhun_out.innerHTML = fifteenscore
+        total_out.innerHTML = total
     }
-    else {fifteenhun_out.innerHTML = 0}
+    else {
+        fifteenhun(time(fifteenhun_in.value))
+
+        if(!isNaN(fifteenscore)) {
+            total = fifteenscore + longscore + shotscore + highscore + hunscore + 
+                fourscore + discusscore + polescore + javelinscore + hurdlescore
+
+            fifteenhun_out.innerHTML = fifteenscore
+            total_out.innerHTML = total
+        }
+    }
 })

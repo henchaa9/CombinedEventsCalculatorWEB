@@ -49,7 +49,10 @@ function time(result) {
 function distance(result){
     if (result.includes(".")) {
         a = result.split(".")
-        return parseFloat(parseInt(a[0]) * 100 + parseInt(a[1]))
+        if (a[1].length > 1) {
+            return parseFloat(parseInt(a[0]) * 100 + parseInt(a[1].substring(0, 2)))
+        }
+        else {return parseFloat(parseInt(a[0]) * 100 + parseInt(a[1].substring(0, 2)) * 10)}
     }
     else {
         return parseFloat(parseInt(result) * 100)

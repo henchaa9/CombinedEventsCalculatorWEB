@@ -1,11 +1,37 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
-.logo {
-  margin: 50px auto;
-  text-align: center;
+.hero {
+  margin: 20px 8% 40px 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.hero .logo {
+  margin-right: 30px;
+}
+
+.hero a {
+  text-decoration: none;
+  color: black;
+}
+
+.hero nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.hero nav ul li {
+  margin: 0 10px;
 }
 
 .table {
@@ -31,7 +57,7 @@ body {
 .row input {
   height: 25px;
   width: 110px;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .result-row {
@@ -42,6 +68,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  row-gap: 5px;
 }
 
 .result-row p {
@@ -59,7 +86,7 @@ body {
 
 @media only screen and (max-width: 768px) {
   .table {
-    width: 85%;
+    width: 95%;
   }
 }
 /*# sourceMappingURL=main.css.map */

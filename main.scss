@@ -6,17 +6,19 @@ body {
 
 .hero {
 
+    margin: auto 8% auto 8%;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+
     .logo {
         margin-right: 30px;
     }
 
-    margin: 20px 8% 40px 8%;
-    display: flex;
-    align-items: baseline;
-
     a {
         text-decoration: none;
         color: black;
+        font-weight: 500;
     }
 
     nav ul {
@@ -24,14 +26,14 @@ body {
         list-style: none;
 
         li {
-            margin: 0 10px;
+            margin: 0 .7em;
         }
     }
 }
 
 .table {
     width: 60%;
-    margin: 0 auto;
+    margin: 20px auto;
 
     span {
         text-align: center;

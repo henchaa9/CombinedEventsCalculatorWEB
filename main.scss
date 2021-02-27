@@ -14,17 +14,26 @@ body {
 .hero {
     flex: 0 1 auto;
 
+    margin: auto 8% auto 8%;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+
     .logo {
         margin-right: 30px;
     }
 
+<<<<<<< HEAD
     margin: 20px 8% 30px 8%;
     display: flex;
     align-items: baseline;
 
+=======
+>>>>>>> 0d2bc07c4d0b772dc737d186833111fc14b161ef
     a {
         text-decoration: none;
         color: black;
+        font-weight: 500;
     }
 
     nav ul {
@@ -32,7 +41,7 @@ body {
         list-style: none;
 
         li {
-            margin: 0 10px;
+            margin: 0 .7em;
         }
     }
 }
@@ -45,10 +54,14 @@ body {
 .table {
     position: absolute;
     width: 60%;
+<<<<<<< HEAD
     left: 20%;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+=======
+    margin: 20px auto;
+>>>>>>> 0d2bc07c4d0b772dc737d186833111fc14b161ef
 
     span {
         text-align: center;

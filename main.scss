@@ -2,15 +2,23 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+
+.main {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
 }
 
 .hero {
+    flex: 0 1 auto;
 
     .logo {
         margin-right: 30px;
     }
 
-    margin: 20px 8% 40px 8%;
+    margin: 20px 8% 30px 8%;
     display: flex;
     align-items: baseline;
 
@@ -29,9 +37,18 @@ body {
     }
 }
 
+.table-container {
+   flex: 1 1 auto; 
+   position: relative;
+}
+
 .table {
+    position: absolute;
     width: 60%;
-    margin: 0 auto;
+    left: 20%;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 
     span {
         text-align: center;

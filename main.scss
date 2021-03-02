@@ -11,21 +11,21 @@ body {
     flex-flow: column;
 }
 
+.open-menu, .close-menu {
+    display: none;
+}
+
 .hero {
     flex: 0 1 auto;
 
-    margin: auto 8% auto 8%;
     display: flex;
     align-items: baseline;
     justify-content: center;
+    margin: 20px 8% 30px 8%;
 
     .logo {
         margin-right: 30px;
     }
-
-    margin: 20px 8% 30px 8%;
-    display: flex;
-    align-items: baseline;
 
     a {
         text-decoration: none;
@@ -38,7 +38,7 @@ body {
         list-style: none;
 
         li {
-            margin: 0 .7em;
+            margin: 0 0.7em;
         }
     }
 }
@@ -52,9 +52,10 @@ body {
     position: absolute;
     width: 60%;
     left: 20%;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    top: 40%;
+    -ms-transform: translateY(-40%);
+    transform: translateY(-40%);
+    max-height: 100%;
 
     span {
         text-align: center;
@@ -63,7 +64,7 @@ body {
 
 .row {
     display: grid;
-    grid-template-columns: auto 33% 33%;
+    grid-template-columns: 40% auto auto;
     align-items: center;
     justify-items: center;
 
@@ -92,7 +93,87 @@ body {
 
 @media only screen and (max-width: 768px) {
 
-    .table {
-        width: 95%;
+    .open-menu {
+        display: block;
     }
+
+    .logo {
+        font-size: 1em;
+    }
+    
+    .row {
+        margin-bottom: 2%;
+        
+        p {
+            font-size: 0.8em;
+        }
+
+        span {
+            font-size: .9em;
+        }
+    }
+
+    .table {
+        width: 90%;
+        left: 5%;
+    }
+
+    .hero {
+        display: flex;
+        place-content: space-between;
+        align-items: center;
+
+        nav {
+            .close-menu {
+                display: block;
+                width: 25px;
+                padding: 20px;
+            }
+
+            z-index: 999;
+            display: none;
+            position: fixed;
+            width: 80%;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            background-color: rgb(191, 237, 255);
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                padding: 1em;
+
+                li {
+                    margin: 1em 0.7em;
+                }
+            }
+
+        }
+    }
+
+    nav.show-menu {
+        display: block;
+    }
+
+    .row input {
+        height: 15px;
+        width: 70px;
+        font-size: 0.9em;
+    }
+
+    .open-menu {
+        width: 25px;
+    }
+
+    .result-row {
+        p {
+            font-size: 0.9em;
+        }
+
+        span {
+            font-size: 0.9em;
+        }
+    }
+
 }

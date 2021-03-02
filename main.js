@@ -191,6 +191,14 @@ hundred_in.addEventListener("input", function() {
             hundred_out.innerHTML = hunscore
             total_out.innerHTML = total
         }
+        else {
+            hunscore = 0
+            total = longscore + shotscore + highscore + fourscore + 
+                hurdlescore + discusscore + polescore + javelinscore + fifteenscore
+
+            hundred_out.innerHTML = hunscore
+            total_out.innerHTML = total
+        }
     }
 })
 
@@ -306,6 +314,14 @@ hurdles_in.addEventListener("input", function() {
             hurdles_out.innerHTML = hurdlescore
             total_out.innerHTML = total
         }
+        else {
+            hurdlescore = 0
+            total = longscore + shotscore + highscore + hunscore + 
+                fourscore + discusscore + polescore + javelinscore + fifteenscore
+
+            hurdles_out.innerHTML = hurdlescore
+            total_out.innerHTML = total
+        }
     }
 })
 
@@ -399,4 +415,16 @@ fifteenhun_in.addEventListener("input", function() {
             total_out.innerHTML = total
         }
     }
+})
+
+const open_menu = document.getElementById("open-menu")
+const close_menu = document.getElementById("close-menu")
+const nav = document.querySelector("nav")
+
+open_menu.addEventListener("click", () => {
+    nav.classList.add("show-menu")
+})
+
+close_menu.addEventListener("click", () => {
+    nav.classList.remove("show-menu")
 })

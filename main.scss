@@ -48,10 +48,10 @@ body {
    position: relative;
 }
 
-.table {
+.mens-decathlon, .mens-heptathlon {
     position: absolute;
     width: 60%;
-    left: 20%;
+    left: 18%;
     top: 40%;
     -ms-transform: translateY(-40%);
     transform: translateY(-40%);
@@ -91,6 +91,18 @@ body {
     }
 }
 
+.mens-heptathlon {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.invisible {
+    display: none;
+}
+
 @media only screen and (max-width: 768px) {
 
     .open-menu {
@@ -113,7 +125,7 @@ body {
         }
     }
 
-    .table {
+    .mens-decathlon {
         width: 90%;
         left: 5%;
     }

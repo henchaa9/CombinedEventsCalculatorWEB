@@ -19,16 +19,17 @@
                 <nav>
                     <a href="#"><img src="close.svg" alt="close menu" class="close-menu" id="close-menu"></a>
                     <ul>
-                        <li><a href="#" class="current">Men's Decathlon</a></li>
-                        <li><a href="#">Men's Heptathlon</a></li>
-                        <li><a href="#">Women's Heptathlon</a></li>
-                        <li><a href="#">Women's Pentathlon</a></li>
+                        <li><a href="#" id="mens-deca-button" class="current">Men's Decathlon</a></li>
+                        <li><a href="#" id="mens-hepta-button">Men's Heptathlon</a></li>
+                        <li><a href="#" id="womens-hepta-button">Women's Heptathlon</a></li>
+                        <li><a href="#" id="womens-penta-button">Women's Pentathlon</a></li>
                     </ul>
                 </nav>
             </div>
 
             <div class="table-container">
-                <div class="table">
+
+                <div class="mens-decathlon" id="mens-decathlon">
                     
                     <div class="row">
                         <p>100M</p>
@@ -95,6 +96,57 @@
                     </div>
 
                 </div>
+
+                <div class="mens-heptathlon" id="mens-heptathlon">
+                    
+                    <div class="row">
+                        <p>60M</p>
+                        <input id="60m-in" type="text" placeholder="ss.ms" maxlength="8">
+                        <span id="60m-out">0</span>
+                    </div>
+
+                    <div class="row">
+                        <p>Long Jump</p>
+                        <input id="longjump-in" type="text" placeholder="mm.cm" maxlength="8">
+                        <span id="longjump-out">0</span>
+                    </div>
+
+                    <div class="row">
+                        <p>Shot Put</p>
+                        <input id="shotput-in" type="text" placeholder="mm.cm" maxlength="8">
+                        <span id="shotput-out">0</span>
+                    </div>
+
+                    <div class="row">
+                        <p>High Jump</p>
+                        <input id="highjump-in" type="text" placeholder="mm.cm" maxlength="8">
+                        <span id="highjump-out">0</span>
+                    </div>
+
+                    <div class="row">
+                        <p>60M Hurdles</p>
+                        <input id="hurdles-in" type="text" placeholder="ss.ms" maxlength="8">
+                        <span id="hurdles-out">0</span>
+                    </div>
+
+                    <div class="row">
+                        <p>Pole Vault</p>
+                        <input id="pole-in" type="text" placeholder="mm.cm" maxlength="8">
+                        <span id="pole-out">0</span>
+                    </div>
+
+                    <div class="row">
+                        <p>1000M</p>
+                        <input id="1000m-in" type="text" placeholder="mm:ss.ms" maxlength="8">
+                        <span id="1000m-out">0</span>
+                    </div>
+
+                    <div class="result-row">
+                        <p>Total: </p><span id="result-span">0</span>
+                    </div>
+
+                </div>
+
             </div>
             <script src="main.js"></script>
         </div>

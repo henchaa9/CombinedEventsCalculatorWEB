@@ -38,28 +38,28 @@ function distance(result){
 
 function mens_decathlon() {
 
-    const hundred_in = document.getElementById("100m-in");
-    const longjump_in = document.getElementById("longjump-in");
-    const shotput_in = document.getElementById("shotput-in");
-    const highjump_in = document.getElementById("highjump-in");
-    const fourhun_in = document.getElementById("400m-in");
-    const hurdles_in = document.getElementById("hurdles-in");
-    const discus_in = document.getElementById("discus-in");
-    const pole_in = document.getElementById("pole-in");
-    const javelin_in = document.getElementById("javelin-in");
-    const fifteenhun_in = document.getElementById("1500m-in");
+    const hundred_in = document.getElementById("md-100m-in");
+    const longjump_in = document.getElementById("md-longjump-in");
+    const shotput_in = document.getElementById("md-shotput-in");
+    const highjump_in = document.getElementById("md-highjump-in");
+    const fourhun_in = document.getElementById("md-400m-in");
+    const hurdles_in = document.getElementById("md-hurdles-in");
+    const discus_in = document.getElementById("md-discus-in");
+    const pole_in = document.getElementById("md-pole-in");
+    const javelin_in = document.getElementById("md-javelin-in");
+    const fifteenhun_in = document.getElementById("md-1500m-in");
 
-    let hundred_out = document.getElementById("100m-out");
-    let longjump_out = document.getElementById("longjump-out");
-    let shotput_out = document.getElementById("shotput-out");
-    let highjump_out = document.getElementById("highjump-out");
-    let fourhun_out = document.getElementById("400m-out");
-    let hurdles_out = document.getElementById("hurdles-out");
-    let discus_out = document.getElementById("discus-out");
-    let pole_out = document.getElementById("pole-out");
-    let javelin_out = document.getElementById("javelin-out");
-    let fifteenhun_out = document.getElementById("1500m-out");
-    let total_out = document.getElementById("result-span");
+    let hundred_out = document.getElementById("md-100m-out");
+    let longjump_out = document.getElementById("md-longjump-out");
+    let shotput_out = document.getElementById("md-shotput-out");
+    let highjump_out = document.getElementById("md-highjump-out");
+    let fourhun_out = document.getElementById("md-400m-out");
+    let hurdles_out = document.getElementById("md-hurdles-out");
+    let discus_out = document.getElementById("md-discus-out");
+    let pole_out = document.getElementById("md-pole-out");
+    let javelin_out = document.getElementById("md-javelin-out");
+    let fifteenhun_out = document.getElementById("md-1500m-out");
+    let total_out = document.getElementById("md-result-span");
 
 
     let total = 0
@@ -422,22 +422,22 @@ function mens_decathlon() {
 
 function mens_heptathlon() {
 
-    const sixty_in = document.getElementById("60m-in");
-    const longjump_in = document.getElementById("longjump-in");
-    const shotput_in = document.getElementById("shotput-in");
-    const highjump_in = document.getElementById("highjump-in");
-    const hurdles_in = document.getElementById("hurdles-in");
-    const pole_in = document.getElementById("pole-in");
-    const thousand_in = document.getElementById("1000m-in");
+    const sixty_in = document.getElementById("mh-60m-in");
+    const longjump_in = document.getElementById("mh-longjump-in");
+    const shotput_in = document.getElementById("mh-shotput-in");
+    const highjump_in = document.getElementById("mh-highjump-in");
+    const hurdles_in = document.getElementById("mh-hurdles-in");
+    const pole_in = document.getElementById("mh-pole-in");
+    const thousand_in = document.getElementById("mh-1000m-in");
 
-    let sixty_out = document.getElementById("60m-out");
-    let longjump_out = document.getElementById("longjump-out");
-    let shotput_out = document.getElementById("shotput-out");
-    let highjump_out = document.getElementById("highjump-out");
-    let hurdles_out = document.getElementById("hurdles-out");
-    let pole_out = document.getElementById("pole-out");
-    let thousand_out = document.getElementById("1000m-out");
-    let total_out = document.getElementById("result-span");
+    let sixty_out = document.getElementById("mh-60m-out");
+    let longjump_out = document.getElementById("mh-longjump-out");
+    let shotput_out = document.getElementById("mh-shotput-out");
+    let highjump_out = document.getElementById("mh-highjump-out");
+    let hurdles_out = document.getElementById("mh-hurdles-out");
+    let pole_out = document.getElementById("mh-pole-out");
+    let thousand_out = document.getElementById("mh-1000m-out");
+    let total_out = document.getElementById("mh-result-span");
 
 
     let total = 0
@@ -550,7 +550,7 @@ function mens_heptathlon() {
         }
     })
 
-    // jasataisa seit
+
     longjump_in.addEventListener("input", function() {
         if (longjump_in.value === "") {
             longscore = 0
@@ -620,6 +620,29 @@ function mens_heptathlon() {
     })
 
 
+    hurdles_in.addEventListener("input", function() {
+        if (hurdles_in.value === "") {
+            hurdlescore = 0
+            total = sixtyscore + shotscore + longscore + 
+                highscore + polescore + thousandscore
+
+            hurdles_out.innerHTML = hurdlescore
+            total_out.innerHTML = total
+        }
+        else {
+            hurdles(time(hurdles_in.value))
+
+            if (!isNaN(hurdlescore)) {
+                total = highscore + sixtyscore + shotscore + longscore + 
+                    hurdlescore + polescore + thousandscore
+
+                hurdles_out.innerHTML = hurdlescore
+                total_out.innerHTML = total
+            }
+        }
+    })
+
+
     pole_in.addEventListener("input", function() {
         if (pole_in.value === "") {
             polescore = 0
@@ -643,12 +666,11 @@ function mens_heptathlon() {
     })
 
 
-
     thousand_in.addEventListener("input", function() {
         if (thousand_in.value === "") {
             thousandscore = 0
             total = longscore + shotscore + highscore + sixtyscore + 
-                fourscore + polescore + hurdlescore
+                polescore + hurdlescore
 
             thousand_out.innerHTML = thousandscore
             total_out.innerHTML = total
@@ -658,7 +680,7 @@ function mens_heptathlon() {
 
             if(!isNaN(thousandscore)) {
                 total = thousandscore + longscore + shotscore + highscore + sixtyscore + 
-                    fourscore + polescore + hurdlescore
+                    polescore + hurdlescore
 
                 thousand_out.innerHTML = thousandscore
                 total_out.innerHTML = total
@@ -668,7 +690,6 @@ function mens_heptathlon() {
 }
 
 mens_decathlon()
-mens_heptathlon()
 
 const open_menu = document.getElementById("open-menu")
 const close_menu = document.getElementById("close-menu")
@@ -692,9 +713,16 @@ const womens_penta_button = document.getElementById("womens-penta-button")
 
 mens_deca_button.addEventListener("click", () => {
     mens_deca_table.classList.add("visible")
+    mens_deca_table.classList.remove("invisible")
+    mens_hepta_table.classList.add("invisible")
+    mens_decathlon()
+    nav.classList.remove("show-menu")
 })
 
 mens_hepta_button.addEventListener("click", () => {
     mens_hepta_table.classList.add("visible")
+    mens_hepta_table.classList.remove("invisible")
     mens_deca_table.classList.add("invisible")
+    mens_heptathlon()
+    nav.classList.remove("show-menu")
 })

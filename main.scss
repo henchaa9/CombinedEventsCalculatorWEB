@@ -48,7 +48,7 @@ body {
    position: relative;
 }
 
-.mens-decathlon, .mens-heptathlon {
+.mens-decathlon, .mens-heptathlon, .womens-heptathlon {
     position: absolute;
     width: 60%;
     left: 18%;
@@ -91,7 +91,7 @@ body {
     }
 }
 
-.mens-heptathlon {
+.mens-heptathlon, .womens-heptathlon {
     display: none;
 }
 
@@ -125,7 +125,7 @@ body {
         }
     }
 
-    .mens-decathlon {
+    .mens-decathlon, .mens-heptathlon, .womens-heptathlon {
         width: 90%;
         left: 5%;
     }

@@ -689,6 +689,324 @@ function mens_heptathlon() {
     })
 }
 
+function womens_heptathlon() {
+
+    const hurdles_in = document.getElementById("wh-hurdles-in");
+    const highjump_in = document.getElementById("wh-highjump-in");
+    const shotput_in = document.getElementById("wh-shotput-in");
+    const twohun_in = document.getElementById("wh-twohun-in");
+    const longjump_in = document.getElementById("wh-longjump-in");
+    const javelin_in = document.getElementById("wh-javelin-in");
+    const eighthun_in = document.getElementById("wh-800m-in");
+
+    let hurdles_out = document.getElementById("wh-hurdles-out");
+    let highjump_out = document.getElementById("wh-highjump-out");
+    let shotput_out = document.getElementById("wh-shotput-out");
+    let twohun_out = document.getElementById("wh-twohun-out");
+    let longjump_out = document.getElementById("wh-longjump-out");
+    let javelin_out = document.getElementById("wh-javelin-out");
+    let eighthun_out = document.getElementById("wh-800m-out");
+    let total_out = document.getElementById("wh-result-span");
+
+
+    let total = 0
+    let hurdlescore = 0
+    let highscore = 0
+    let shotscore = 0
+    let twoscore = 0
+    let longscore = 0
+    let javelinscore = 0
+    let eightscore = 0
+
+
+    function hurdles(result) {
+        const a = 9.23076
+        const b = 26.7
+        const c = 1.835
+        if (0 < result <= 26.7) {
+            hurdlescore = parseInt((a * (b - result)**c))
+        }
+    }
+
+
+    function highjump(result) {
+        const a = 1.84523
+        const b = 75
+        const c = 1.348
+        if (result >= 75) {
+            highscore = parseInt((a * (result - b)**c))
+        }
+    }
+
+
+    function shotput(result) {
+        const a = 56.0211
+        const b = 1.5
+        const c = 1.05
+        if (result >= 1.50) {
+            shotscore = parseInt((a * (result - b)**c))
+        }
+    }
+
+
+    function twohun(result) {
+        const a = 4.99087
+        const b = 42.5
+        const c = 1.81
+        if (0 < result <= 42.5) {
+            twoscore = parseInt((a * (b - result)**c))
+        }
+    }
+
+
+    function longjump(result) {
+        const a = 0.188807
+        const b = 210
+        const c = 1.41
+        if (result >= 210) {
+            longscore = parseInt((a * (result - b)**c))
+        }
+    }
+
+
+    function javelin(result) {
+        const a = 15.9803
+        const b = 3.8
+        const c = 1.04
+        if (result >= 3.8) {
+            javelinscore = parseInt((a * (result - b)**c))
+        }
+    }
+
+
+    function eighthun(result) {
+        const a = 0.11193
+        const b = 254
+        const c = 1.88
+        if (0 < result <= 254) {
+            eightscore = parseInt((a * (b - result)**c))
+        }
+    }
+
+
+    hurdles_in.addEventListener("input", function() {
+        if (hurdles_in.value === "") {
+            hurdlescore = 0
+            total = longscore + shotscore + highscore + 
+                twoscore + javelinscore + eightscore
+
+            hurdles_out.innerHTML = hurdlescore
+            total_out.innerHTML = total
+        }
+        else {
+            hurdles(time(hurdles_in.value))
+
+            if(!isNaN(hurdlescore)) {
+                total = hurdlescore + longscore + shotscore + highscore + 
+                    twoscore + javelinscore + eightscore
+
+                hurdles_out.innerHTML = hurdlescore
+                total_out.innerHTML = total
+            }
+            else {
+                hurdlescore = 0
+                total = longscore + shotscore + highscore + 
+                    twoscore + javelinscore + eightscore
+
+                hurdles_out.innerHTML = hurdlescore
+                total_out.innerHTML = total
+            }
+        }
+    })
+
+
+    highjump_in.addEventListener("input", function() {
+        if (highjump_in.value === "") {
+            highscore = 0
+            total = longscore + shotscore + hurdlescore + 
+                twoscore + javelinscore + eightscore
+
+            highjump_out.innerHTML = highscore
+            total_out.innerHTML = total
+        }
+        else {
+            highjump(distance(highjump_in.value))
+
+            if(!isNaN(highscore)) {
+                total = highscore + longscore + shotscore + hurdlescore + 
+                    twoscore + javelinscore + eightscore
+
+                highjump_out.innerHTML = highscore
+                total_out.innerHTML = total
+            }
+            else {
+                highscore = 0
+                total = longscore + shotscore + hurdlescore + 
+                    twoscore + javelinscore + eightscore
+
+                highjump_out.innerHTML = highscore
+                total_out.innerHTML = total
+            }
+        }
+    })
+
+
+    shotput_in.addEventListener("input", function() {
+        if (shotput_in.value === "") {
+            shotscore = 0
+            total = longscore + highscore + hurdlescore + 
+                twoscore + javelinscore + eightscore
+
+            shotput_out.innerHTML = shotscore
+            total_out.innerHTML = total
+        }
+        else {
+            shotput(parseFloat(shotput_in.value))
+
+            if(!isNaN(shotscore)) {
+                total = shotscore + longscore + highscore + hurdlescore + 
+                    twoscore + javelinscore + eightscore
+
+                shotput_out.innerHTML = shotscore
+                total_out.innerHTML = total
+            }
+            else {
+                shotscore = 0
+                total = longscore + highscore + hurdlescore + 
+                    twoscore + javelinscore + eightscore
+
+                shotput_out.innerHTML = shotscore
+                total_out.innerHTML = total
+            }
+        }
+    })
+    
+
+    twohun_in.addEventListener("input", function() {
+        if (twohun_in.value === "") {
+            twoscore = 0
+            total = longscore + highscore + hurdlescore + 
+                shotscore + javelinscore + eightscore
+
+            twohun_out.innerHTML = twoscore
+            total_out.innerHTML = total
+        }
+        else {
+            twohun(time(twohun_in.value))
+
+            if(!isNaN(twoscore)) {
+                total = twoscore + longscore + highscore + hurdlescore + 
+                    shotscore + javelinscore + eightscore
+
+                twohun_out.innerHTML = twoscore
+                total_out.innerHTML = total
+            }
+            else {
+                twoscore = 0
+                total = longscore + highscore + hurdlescore + 
+                    shotscore + javelinscore + eightscore
+
+                twohun_out.innerHTML = twoscore
+                total_out.innerHTML = total
+            }
+        }
+    })
+    
+
+    longjump_in.addEventListener("input", function() {
+        if (longjump_in.value === "") {
+            longscore = 0
+            total = twoscore + highscore + hurdlescore + 
+                shotscore + javelinscore + eightscore
+
+            longjump_out.innerHTML = longscore
+            total_out.innerHTML = total
+        }
+        else {
+            longjump(distance(longjump_in.value))
+
+            if(!isNaN(longscore)) {
+                total = longscore + twoscore + highscore + hurdlescore + 
+                    shotscore + javelinscore + eightscore
+
+                longjump_out.innerHTML = longscore
+                total_out.innerHTML = total
+            }
+            else {
+                longscore = 0
+                total = twoscore + highscore + hurdlescore + 
+                    shotscore + javelinscore + eightscore
+
+                longjump_out.innerHTML = longscore
+                total_out.innerHTML = total
+            }
+        }
+    })
+
+
+    javelin_in.addEventListener("input", function() {
+        if (javelin_in.value === "") {
+            javelinscore = 0
+            total = twoscore + highscore + hurdlescore + 
+                shotscore + longscore + eightscore
+
+            javelin_out.innerHTML = javelinscore
+            total_out.innerHTML = total
+        }
+        else {
+            javelin(parseFloat(javelin_in.value))
+
+            if(!isNaN(javelinscore)) {
+                total = javelinscore + twoscore + highscore + hurdlescore + 
+                    shotscore + longscore + eightscore
+
+                javelin_out.innerHTML = javelinscore
+                total_out.innerHTML = total
+            }
+            else {
+                javelinscore = 0
+                total = twoscore + highscore + hurdlescore + 
+                    shotscore + longscore + eightscore
+
+                javelin_out.innerHTML = javelinscore
+                total_out.innerHTML = total
+            }
+        }
+    })
+
+
+    eighthun_in.addEventListener("input", function() {
+        if (eighthun_in.value === "") {
+            eightscore = 0
+            total = twoscore + highscore + hurdlescore + 
+                shotscore + longscore + javelinscore
+
+            eighthun_out.innerHTML = eightscore
+            total_out.innerHTML = total
+        }
+        else {
+            eighthun(time(eighthun_in.value))
+
+            if(!isNaN(eightscore)) {
+                total = eightscore + twoscore + highscore + hurdlescore + 
+                    shotscore + longscore + javelinscore
+
+                eighthun_out.innerHTML = eightscore
+                total_out.innerHTML = total
+            }
+            else {
+                eightscore = 0
+                total = twoscore + highscore + hurdlescore + 
+                    shotscore + longscore + javelinscore
+
+                eighthun_out.innerHTML = eightscore
+                total_out.innerHTML = total
+            }
+        }
+    })
+
+}
+
 mens_decathlon()
 
 const open_menu = document.getElementById("open-menu")
@@ -704,7 +1022,8 @@ close_menu.addEventListener("click", () => {
 })
 
 const mens_deca_table = document.getElementById("mens-decathlon")
-var mens_hepta_table = document.getElementById("mens-heptathlon")
+const mens_hepta_table = document.getElementById("mens-heptathlon")
+const womens_hepta_table = document.getElementById("womens-heptathlon")
 
 const mens_deca_button = document.getElementById("mens-deca-button")
 const mens_hepta_button = document.getElementById("mens-hepta-button")
@@ -715,6 +1034,7 @@ mens_deca_button.addEventListener("click", () => {
     mens_deca_table.classList.add("visible")
     mens_deca_table.classList.remove("invisible")
     mens_hepta_table.classList.add("invisible")
+    womens_hepta_table.classList.add("invisible")
     mens_decathlon()
     nav.classList.remove("show-menu")
 })
@@ -723,6 +1043,16 @@ mens_hepta_button.addEventListener("click", () => {
     mens_hepta_table.classList.add("visible")
     mens_hepta_table.classList.remove("invisible")
     mens_deca_table.classList.add("invisible")
+    womens_hepta_table.classList.add("invisible")
     mens_heptathlon()
+    nav.classList.remove("show-menu")
+})
+
+womens_hepta_button.addEventListener("click", () => {
+    womens_hepta_table.classList.add("visible")
+    womens_hepta_table.classList.remove("invisible")
+    mens_deca_table.classList.add("invisible")
+    mens_hepta_table.classList.add("invisible")
+    womens_heptathlon()
     nav.classList.remove("show-menu")
 })

@@ -64,7 +64,7 @@ body {
   position: relative;
 }
 
-.mens-decathlon, .mens-heptathlon {
+.mens-decathlon, .mens-heptathlon, .womens-heptathlon {
   position: absolute;
   width: 60%;
   left: 18%;
@@ -74,7 +74,7 @@ body {
   max-height: 100%;
 }
 
-.mens-decathlon span, .mens-heptathlon span {
+.mens-decathlon span, .mens-heptathlon span, .womens-heptathlon span {
   text-align: center;
 }
 
@@ -119,7 +119,7 @@ body {
           flex-grow: 1;
 }
 
-.mens-heptathlon {
+.mens-heptathlon, .womens-heptathlon {
   display: none;
 }
 
@@ -147,7 +147,7 @@ body {
   .row span {
     font-size: .9em;
   }
-  .mens-decathlon {
+  .mens-decathlon, .mens-heptathlon, .womens-heptathlon {
     width: 90%;
     left: 5%;
   }

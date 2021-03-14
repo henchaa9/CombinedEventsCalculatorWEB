@@ -48,7 +48,7 @@ body {
    position: relative;
 }
 
-.mens-decathlon, .mens-heptathlon, .womens-heptathlon {
+.mens-decathlon, .mens-heptathlon, .womens-heptathlon, .womens-pentathlon {
     position: absolute;
     width: 60%;
     left: 18%;
@@ -91,7 +91,7 @@ body {
     }
 }
 
-.mens-heptathlon, .womens-heptathlon {
+.mens-heptathlon, .womens-heptathlon, .womens-pentathlon {
     display: none;
 }
 
@@ -110,22 +110,22 @@ body {
     }
 
     .logo {
-        font-size: 1em;
+        font-size: 1.2em;
     }
     
     .row {
-        margin-bottom: 2%;
+        margin-bottom: 3%;
         
         p {
-            font-size: 0.8em;
+            font-size: 1em;
         }
 
         span {
-            font-size: .9em;
+            font-size: 1em;
         }
     }
 
-    .mens-decathlon, .mens-heptathlon, .womens-heptathlon {
+    .mens-decathlon, .mens-heptathlon, .womens-heptathlon, .womens-pentathlon {
         width: 90%;
         left: 5%;
     }
@@ -169,22 +169,22 @@ body {
     }
 
     .row input {
-        height: 15px;
-        width: 70px;
+        height: 20px;
+        width: 75px;
         font-size: 0.9em;
     }
 
     .open-menu {
-        width: 25px;
+        width: 30px;
     }
 
     .result-row {
         p {
-            font-size: 0.9em;
+            font-size: 1em;
         }
 
         span {
-            font-size: 0.9em;
+            font-size: 1em;
         }
     }
 
